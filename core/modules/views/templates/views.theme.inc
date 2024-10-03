@@ -162,7 +162,9 @@ function template_preprocess_views_view(&$variables) {
 }
 
 /**
- * Preprocess theme function to print a single record from a row, with fields
+ * Preprocess theme function to print a single record from a row, with fields.
+ * This hook will only be run on views whose Format settings choose to show fields.
+ * Therefore, it won't run for views that use the Table format.
  */
 function template_preprocess_views_view_fields(&$variables) {
   $view = $variables['view'];
